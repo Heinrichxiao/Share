@@ -1,0 +1,34 @@
+{
+  "name": "shrideo",
+  "version": "1.0.0",
+  "description": "Share videos on shrideo, for teachers and students",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heinrichxiao/Shrideo.git"
+  },
+  "keywords": [
+    "Share",
+    "Video",
+    "Teacher",
+    "Students"
+  ],
+  "author": "Heinrich X.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Heinrichxiao/Shrideo/issues"
+  },
+  "homepage": "https://github.com/Heinrichxiao/Shrideo#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0"
+  }
+}
