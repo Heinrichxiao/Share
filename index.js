@@ -18,7 +18,7 @@ app.use(bodyParser());
 app.use(session({
     resave: false,
     saveUninitialized: false,
-    secret: 'shhhh, very secret'
+    secret: process.env.SESSION_SECRET
 }));
 
 login.get('/login', (req, res) => {
@@ -72,7 +72,7 @@ signup.post('/signup', (req, res) => {
         res.redirect('/');
         return;
     }
-    /* TODO: Authenticate */
+
     if (req.body.usr == '') {
         res.redirect('/signup');
     }
