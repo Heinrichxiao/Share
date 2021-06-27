@@ -4,7 +4,7 @@
   "description": "Share videos on shrideo, for teachers and students",
   "main": "index.js",
   "scripts": {
-    "test": "node src/index.js",
+    "test": "node index.js",
     "lint": "eslint src/"
   },
   "repository": {
