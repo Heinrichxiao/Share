@@ -4,7 +4,7 @@
   "description": "Share videos on shrideo, for teachers and students",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
+    "test": "jest",
     "lint": "eslint src/"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^7.29.0"
+    "eslint": "^7.29.0",
+    "jest": "^27.0.5"
   }
 }

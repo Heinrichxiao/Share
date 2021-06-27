@@ -8,7 +8,7 @@ const login = express.Router();
 const signup = express.Router();
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const sha256 = require('./src/sha256');
+const hash = require('./hash');
 const fs = require('fs');
 const db = require('./db.json');
 
@@ -93,25 +93,6 @@ signup.post('/signup', (req, res) => {
 
     res.redirect('/login');
 });
-
-function hash(password, salt=getRandomString(10)) {
-    const befHashed = password + salt;
-    const hashed = sha256(befHashed);
-
-    return {
-        hashed,
-        salt
-    };
-}
-
-function getRandomString(length) {
-    const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
-    }
-    return result;
-}
 
 app.use(signup);
 app.use(login);
