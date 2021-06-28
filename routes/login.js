@@ -18,7 +18,7 @@ login.post('/login', (req, res) => {
         return;
     }
     console.log(db);
-    /* TODO: Authenticate */
+    
     if (req.body.usr == '') {
         res.redirect('/login');
     }
