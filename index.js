@@ -10,8 +10,8 @@ module.exports = () => {
     const bodyParser = require('body-parser');
     const session = require('express-session');
     const hash = require('./hash');
-    const fs = require('fs');
     const db = require('./db.json');
+    const save = require('./save');
 
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, './views'));
@@ -88,9 +88,7 @@ module.exports = () => {
             psw: hash(req.body.psw)
         };
 
-        fs.writeFile('./db.json', JSON.stringify(db), (err) => {
-            if (err) console.log(err);
-        });
+        save(db);
 
         res.redirect('/login');
     });
