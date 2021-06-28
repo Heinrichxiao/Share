@@ -8,5 +8,5 @@ test('test save function', () => {
     fs.readFile('./test.json', 'utf8', (err, data) => {
         db = data;
     });
-    expect(db).toEqual('{test: \'test\'}');
+    expect(db).toBe('{test: \'test\'}');
 });
