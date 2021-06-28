@@ -11,4 +11,7 @@ test('test save function', () => {
     if (db == '{test: \'test\'}') {
         expect(true).toBe(true);
     }
+    fs.unlink('./test.json', (err) => {
+        if (err) throw err;
+    });
 });
