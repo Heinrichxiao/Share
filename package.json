@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src/",
-    "start": "node run"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
