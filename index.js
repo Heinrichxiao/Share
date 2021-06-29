@@ -9,6 +9,7 @@ module.exports = () => {
     const session = require('express-session');
     const login = require('./routes/login');
     const signup = require('./routes/signup');
+    const index = require('./routes/index');
   
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, './views'));
@@ -23,6 +24,7 @@ module.exports = () => {
   
     app.use(signup);
     app.use(login);
+    app.use(index);
   
     app.get('/*', (req, res) => {
         res.render('404');
@@ -32,4 +34,3 @@ module.exports = () => {
         console.log(`Starting server at: https://localhost:${port}`);
     });
 };
-  

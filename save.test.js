@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const save = require('./save');
 const fs = require('fs');
+const clearDb = require('./clearDb');
 
 test('test save function', () => {
     save({test: 'test'}, './test.json');
@@ -15,3 +16,5 @@ test('test save function', () => {
         if (err) throw err;
     });
 });
+
+clearDb();

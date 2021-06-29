@@ -17,8 +17,6 @@ login.post('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    console.log(db);
-    
     if (req.body.usr == '') {
         res.redirect('/login');
     }
