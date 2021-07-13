@@ -9,6 +9,7 @@ index.get('/', (req, res) => {
         return;
     }
     /* TODO: Render a template */
+    res.send('logged in');
 });
 
 module.exports = index;

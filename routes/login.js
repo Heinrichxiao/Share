@@ -19,9 +19,11 @@ login.post('/login', (req, res) => {
     }
     if (req.body.usr == '') {
         res.redirect('/login');
+        return;
     }
     if (req.body.psw == '') {
         res.redirect('/login');
+        return;
     }
     if (
         req.body.usr in db.users &&
