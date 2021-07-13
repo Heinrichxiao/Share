@@ -9,10 +9,14 @@ module.exports = () => {
     const session = require('express-session');
     const login = require('./routes/login');
     const signup = require('./routes/signup');
+    const record = require('./routes/record');
     const index = require('./routes/index');
-  
+    
+    // Set views
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, './views'));
+
+    // Use libraries or features
     app.use(bodyParser());
     app.use(
         session({
@@ -21,10 +25,13 @@ module.exports = () => {
             secret: process.env.SESSION_SECRET
         })
     );
-  
+    app.use(express.static('public'));
+    
+    // Use routers
     app.use(signup);
     app.use(login);
     app.use(index);
+    app.use(record);
   
     app.get('/*', (req, res) => {
         res.render('404');
