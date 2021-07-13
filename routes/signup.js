@@ -21,12 +21,15 @@ signup.post('/signup', (req, res) => {
 
     if (req.body.usr == '') {
         res.redirect('/signup');
+        return;
     }
     if (req.body.psw == '') {
         res.redirect('/signup');
+        return;
     }
     if (Object.keys(db.users).includes(req.body.usr)) {
         res.redirect('/login');
+        return;
     }
     db.users[req.body.usr] = {
         usr: req.body.usr,
