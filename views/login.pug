@@ -4,7 +4,15 @@ html(lang="en")
     include head.pug
     title Login
   body 
-    form(action="/login", method="post") 
-      input#usr(type="text", name="usr")
-      input#psw(type="password", name="psw")
-      input(type="submit", value="Login")
+    form(action="/login", method="post", class="w3-container w3-center") 
+      label(for="usr") Username
+      br
+      input#usr(type="text", name="usr", class="w3-round", style="border: 2px solid #ccc;")
+      br
+      br
+      label(for="psw") Password
+      br
+      input#psw(type="password", name="psw", class="w3-round", style="border: 2px solid #ccc;")
+      br
+      br
+      input(type="submit", value="Login" class="w3-green w3-button w3-round")
