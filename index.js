@@ -10,6 +10,7 @@ module.exports = () => {
     const login = require('./routes/login');
     const signup = require('./routes/signup');
     const record = require('./routes/record');
+    const logout = require('./routes/logout');
     const index = require('./routes/index');
     
     // Set views
@@ -31,6 +32,7 @@ module.exports = () => {
     app.use(signup);
     app.use(login);
     app.use(index);
+    app.use(logout);
     app.use(record);
   
     app.get('/*', (req, res) => {
