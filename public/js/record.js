@@ -13,11 +13,9 @@ function setup() {
 
     video = createCapture({
         video: {
-            optional: [
-                {
-                    maxFrameRate: 10
-                }
-            ]
+            optional: [{
+                maxFrameRate: 30
+            }]
         }
     });
     const button = createButton('Submit video', 'submit');
@@ -26,7 +24,13 @@ function setup() {
     const widthInp = createInput();
     createElement('br');
     const videosetupLabel2 = createSpan('Video height').class('center');
+    createElement('br');
     const heightInp = createInput();
+    createElement('br');
+    const videosetupLabel3 = createSpan('Video name').class('center');
+    createElement('br');
+    const videoName = createInput();
+    createElement('br');
     createElement('br');
     const setupVideo = createButton('Setup Video');
 
@@ -35,22 +39,27 @@ function setup() {
     widthInp.class('w3-round textInput');
     heightInp.show();
     heightInp.class('w3-round textInput');
+    videoName.show();
+    videoName.class('w3-round textInput');
 
     // Setup the setup video button
     setupVideo.class('w3-round w3-green w3-button');
     setupVideo.mouseReleased(() => {
         heightInp.hide();
         widthInp.hide();
+        videoName.hide();
         videosetupLabel1.hide();
         videosetupLabel2.hide();
+        videosetupLabel3.hide();
         setupVideo.hide();
 
         button.show();
         video.size(widthInp.value(), heightInp.value());
         video.show();
+        video.loadPixels();
         finishedRecording = false;
     });
-    
+
     // Setup the video
     video.hide();
 
@@ -60,7 +69,7 @@ function setup() {
     button.mouseReleased(async () => {
         video.hide();
         finishedRecording = true;
-        const name = random(1000).toString();
+        const name = videoName.value();
         for (let i in frames) {
             const data = {
                 frame: frames[i],
@@ -81,12 +90,11 @@ function setup() {
         }
     });
     frameRate(30);
-    
+
 }
 
 function draw() {
     if (!finishedRecording) {
-        video.loadPixels();
         const frame64 = video.canvas.toDataURL();
         frames.push(frame64);
     }
