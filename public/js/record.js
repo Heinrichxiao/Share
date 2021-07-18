@@ -68,6 +68,7 @@ function setup() {
     button.class('w3-round w3-green w3-border-0 w3-right');
     button.mouseReleased(async () => {
         video.hide();
+        button.hide();
         finishedRecording = true;
         const name = videoName.value();
         for (let i in frames) {

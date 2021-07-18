@@ -11,6 +11,7 @@ module.exports = () => {
     const signup = require('./routes/signup');
     const record = require('./routes/record');
     const logout = require('./routes/logout');
+    const play = require('./routes/play');
     const index = require('./routes/index');
     
     // Set views
@@ -34,6 +35,7 @@ module.exports = () => {
     app.use(index);
     app.use(logout);
     app.use(record);
+    app.use(play);
   
     app.get('/*', (req, res) => {
         res.render('404');
