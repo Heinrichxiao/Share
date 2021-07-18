@@ -13,6 +13,10 @@ module.exports = () => {
     const logout = require('./routes/logout');
     const play = require('./routes/play');
     const index = require('./routes/index');
+    const renameDb = require('./helpers/renameDb');
+
+    // Rename database
+    renameDb();
     
     // Set views
     app.set('view engine', 'pug');
