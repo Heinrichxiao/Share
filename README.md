@@ -7,7 +7,8 @@ Share videos on shrideo, for teachers and students
 - Open a terminal
 - Clone the repo `git clone https://github.com/Heinrichxiao/Shrideo.git`
 - Go into the cloned directory`cd Shrideo`
-- Rename the env sample to env `mv .env-sample .env`
+- Rename env sample to env `mv .env-sample .env`
+- Rename db sample to db `mv db.sample.json db.json`
 - Run `npm install` to install dependencies
 - Run `npm start`
 - Open the browser
@@ -17,6 +18,6 @@ Share videos on shrideo, for teachers and students
 
 - [x] Setup project
 - [x] Finish login and signup page
-- [ ] Upload videos
-- [ ] Watch videos
+- [x] Upload videos
+- [x] Watch videos
 - [ ] Likes, Subscribes, etc.

@@ -105,3 +105,6 @@ dist
 
 # .DS_Store file if there is one
 .DS_Store
+
+# Ignore database
+db.json
