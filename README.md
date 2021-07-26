@@ -19,5 +19,5 @@ Share videos on shrideo, for teachers and students
 - [x] Setup project
 - [x] Finish login and signup page
 - [x] Upload videos
-- [x] Watch videos
+- [ ] Watch videos
 - [ ] Likes, Subscribes, etc.
