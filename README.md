@@ -1,4 +1,4 @@
-# Shrideo
+# Share
 
 Share videos on shrideo, for teachers and students
 
