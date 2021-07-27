@@ -11,4 +11,5 @@ function setup() {
 
     const video = Object.values(getVideo());
     console.log(video);
+    /* TODO: Watch code here */
 }
