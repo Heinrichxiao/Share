@@ -1,6 +1,6 @@
 # Share
 
-Share videos on share, for teachers and students
+Share videos on share
 
 ## Run
   - Install [node](https://nodejs.org/en/)
